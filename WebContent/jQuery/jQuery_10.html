@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("#slideDown").click(function(){
+			$('#dog01').slideDown("slow")		// jQuery slideDown()함수로 해당 요소를 천천히 밀어 내린다
+		});
+		$("#slideUp").click(function(){
+			$('#dog01').slideUp("slow")			// jQuery slideUp()함수로 해당 요소를 천천히 밀어 올린다
+		});
+	});
+
+</script>
+
+</head>
+<body>
+	<img id="dog01" src="../images/dog.jpg" width="200" height="180" alt="강아지" style="display: none; position: relative;">
+	<hr>
+	<button type="button" id="slideDown">slideDown</button>
+	<button type="button" id="slideUp">slideUp</button>
+
+</body>
+</html>
+

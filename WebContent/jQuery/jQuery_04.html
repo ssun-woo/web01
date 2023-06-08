@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<!-- jQuery 라이브러리 추가 -->
+
+<style type="text/css">
+/* type 속성 생략 가능, 생략하면 기본값으로 css로 인식한다 */
+
+	body{
+		background-color : #EEF;
+	}
+	
+	div {
+		padding : 20px;	/* 상하좌우 안여백을 지정 (<-> margin)*/
+	}
+
+</style>
+
+</head>
+<body>
+
+	<h1>특정영역에 x, y 좌표값을 출력</h1>
+	
+	<div id="log"></div>
+	
+	<script type="text/javascript">
+		$(document).mousemove(function(e) {		// 마우스를 움직였을때 이벤트 정보가 매개변수인 e에 전달됨
+				$("#log").text("x좌표 : " + e.pageX + ", y좌표 : " + e.pageY);		// 마우스를 움직였을 때 x, y 좌표값이 해당영역에 변경적용
+				// x, y 값은 좌측 상단끝이 (0,0)으로 시작됨
+		});
+	
+	</script>
+
+</body>
+</html>

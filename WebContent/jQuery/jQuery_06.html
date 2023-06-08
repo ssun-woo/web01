@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+</head>
+<body>
+
+<input type="button" id="apple" value="Show Apple"><hr>
+<img id="apple_image" src="../images/apple.jpg" width="250" height="230" style="display: none;">
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#apple").click(function(){
+			$('#apple_image').toggle();	// jQuery toggle()함수는 해당 영역(이미지,텍스트)이 숨겨져 있으면 보이게 하고, 보이면 숨긴다
+		});
+	});
+</script>
+
+</body>
+</html>
