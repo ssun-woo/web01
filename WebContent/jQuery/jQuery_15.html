@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<script>
+	
+	$(document).ready(function(){
+		$("#btn_name").click(function(){
+			$("#name").val("이름을 다시 입력하세요!");		// jQuery val()함수에 인자값이 있다면 해당 입력 필드에 값을 변경 적용한다
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<form>
+		<input type="button" id="btn_name" value="val()">
+		<hr>
+		<input type="text" id="name" size="16">
+	</form>
+
+</body>
+</html>
