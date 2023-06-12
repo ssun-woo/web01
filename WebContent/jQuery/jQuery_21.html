@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<style>
+	.warn {
+		background-color: orange;
+		border: 3px solid red; /* 테두리 선굵기를 3px, solid 실선, 선을 빨간색으로 설정 */
+	}
+</style>
+
+<script>
+	
+	$(document).ready(function(){
+		$("#btn01").click(function(){
+			$("#div01").addClass("warn");		// warn 클래스 선택자로 지정된 css를 한꺼번에 div01영역에 적용
+		});
+	});
+
+</script>
+
+</head>
+<body>
+	
+	<div id="div01">
+		<p>예제 단락입니다</p>
+	</div>
+	<hr>
+	<input type="button" id="btn01" value="addClass()"> 
+	
+	
+</body>
+</html>

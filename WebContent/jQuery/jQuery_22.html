@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+<style>
+	div {
+		width: 70px;
+		height: 50px;
+		float: left;	/* 복수개의 div 레이아웃 수직정렬을 수평정렬로 바꾼다 */
+		margin: 5px;	/* 상하좌우 바깥여백을 지정 */
+		background: red;/* 배경색을 빨강으로 처리 */
+	}
+	
+	.next {
+		background: blue;
+	}
+</style>
+</head>
+<body>
+
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	
+	<script>
+		$(document).ready(function(){
+			$modWidth = 50;
+			/*앞에 '$'가 붙으면 jQuery변수*/
+			
+			$("div").click(function(){
+				$(this).width($modWidth).addClass("next")	
+				// 메서드 체이닝 방법을 사영해서 jQuery 2개의 함수를 한줄로 나열해서 한꺼번에 기능을 적용함, width()함수로 너비를 변경적용
+				$modWidth -= 8;		// 클릭할 때 마다 너비가 8px씩 감소처리
+			});
+		});
+	</script>
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

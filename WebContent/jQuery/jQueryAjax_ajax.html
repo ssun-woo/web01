@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<style>
+	div {
+		width: 200px;
+		height: 150px;
+		margin: 5px;
+		float: left;
+	}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+		$("#menu01").click(function(){
+			$.ajax({
+				url : "menu.html", 				// 비동기 ajax로 불러올 파일 경로
+				dataType : 'html',				// 받아오는 자료형식
+				success : function(data){		/* 비동기식 ajax로 받아오는 것이 성공시 호출되는 callback 함수
+											      	받아온 자료는 data 매개변수에 저장된다*/
+					$('#result01').html(data);	// id="result01" 영역에 jQuery html()함수로 받아온 결과를 태그와 문자를 함께 변경 적용 
+				}
+			});	// jQuery ajax()함수가 끝나는 부분
+			return false;
+		});	// menu01.click 이 끝나는 부분
+		
+		$("#menu02").click(function(){
+			$.ajax({					// ajax를 사용하면 get, post 둘다 제약없이 사용가능
+				url: "menu.html",
+				dataType: "html",
+				success: function($data){
+					$("#result02").html($($data).find("li"));	// menu.html에서 jQuery find()함수로 li태그 요소 내용만 가져와서 변경 적용한다
+				}
+			});	// jQuery ajax() 함수
+			return false;
+		});
+	});
+</script>
+
+
+
+</head>
+<body>
+	
+	<div>
+		<a href="#" id="menu01">메뉴보기 01</a>
+		<hr>
+		<span id="result01"></span>
+	</div>
+
+	<div>
+		<a href="#" id="menu02">중식메뉴보기</a>
+		<hr>
+		<span id="result02"></span>
+	</div>
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

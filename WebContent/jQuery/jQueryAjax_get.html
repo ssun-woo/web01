@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<style>
+	table,th,td{
+		border: 1px solid gray;
+	}
+</style>
+
+<script>
+	$(function(){
+		$.get("item.xml", function(data){		// get방식으로 비동기식 ajax로 가져온 xml 데이터는 data 매개변수에 저장됨
+			$("#result").append(
+				"<tr><th>id</th> <th>name</th> <th>price</th> <th>description</th></tr>"	
+			);
+
+			$(data).find("item").each(function(){	// 메서드 체이닝 방법으로 data 매개변수에서 item태그를 찾아서 반복
+				$item = $(this);
+				$("#result").append(
+					"<tr><th>" + $item.attr("id")				// attr("id") 함수는 id 속성값을 가져온다
+					+"</th><th>" + $item.attr("name")			// attr("id") 함수는 id 속성값을 가져온다
+					+"</th><th>" + $item.find("price").text()	// find()함수로 price태그를 찾고 text()함수로 문자 내용을 가져옴
+					+"</th><th>" + $item.find("des").text()		// find()함수로 des태그를 찾고 text()함수로 문자 내용을 가져옴
+				);
+			});
+		});
+		
+	});
+</script>
+
+</head>
+<body>
+
+<h1>jQuery 비동기식 $.get() 함수</h1>
+
+<table id="result"></table>
+
+</body>
+</html>

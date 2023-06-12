@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<style>
+	div {
+		width: 180px;
+		height: 80px;
+		margin: 3px;
+		float: left;
+	}
+</style>
+
+<script>
+	
+	$(function(){
+		$("#menu01").click(function(){
+			$("#re01").load("menu.html");	// 해당 id(re01) 영역에 바동기식 jQuery Ajax 함수인 load()로 menu.html 파일을 로드해서 읽어온다
+			return false;			// return false를 넣어주면 URL끝에 #이 붙지 않는다
+		});
+		
+		$("#menu02").click(function(){
+			$("#re02").load("menu.html li");	// 비동기식으로 menu.html에서 li 태그 요소 내용만 읽어온다
+			return false;
+		});
+	});
+	
+</script>
+
+</head>
+<body>
+
+<div>
+	<a href="#" id="menu01">메뉴보기 01</a><br>
+	<!-- 하이퍼링크에서 href="#"으로 걸어준 이유는 다른 주소로 이동을 막고 현재 화면에서 어떤 UI 또는 이벤트 효과를 보기 위해서다 -->
+	<span id="re01"></span><!-- 이 영역에 비동기식으로 읽어온 menu.html 파일 내용이 출력된다 -->
+</div>
+
+<div>
+	<a href="#" id="menu02">중식메뉴 보기02</a>
+	<span id="re02"></span>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

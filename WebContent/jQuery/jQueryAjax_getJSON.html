@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<style>
+	table,th,td{
+		border: 1px solid red;
+	}
+</style>
+
+<script>
+	
+	$(function(){
+		$.getJSON("item.json", function($data, textStatus){
+			// 비동기식 get 방식으로 가져온 json데이터를 $data매개변수에 저장함.
+			// textStatus매개변수는 'success'라는 문자가 저장됨.
+			alert(textStatus);
+			
+			$("#result").append(	//jQuery append()함수로 기존 내용을 유지한채 내용끝에 추가
+				"<tr><th>번호</th> <th>과일이름</th> <th>가격</th> <th>설명</th></tr>" 
+			);
+			
+			$.each($data, function(){	// jQuery each() 함수로 tr 행단위로 반복
+				$("#result").append(
+					"<tr><td>" + this.id + "</td><td>" + this.name + "</td><td>" + this.price + "</td><td>" + this.description +"</td></tr>"
+				);
+			});
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+	<h1>비동기식 jQuery ajax 함수 getJSON으로 키, 값 쌍의 JSON 데이터 읽어오기</h1>
+	
+	<table id="result"></table>	<!-- 비동기식으로 가져온 JSON 데이터가 출력되는 부분 -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

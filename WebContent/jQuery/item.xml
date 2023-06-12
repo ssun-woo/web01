@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<items>
+	<item id="1" name="블루베리">
+		<price>23000</price>
+		<des>블루베리에 포함된 안토시아닌은 눈 피로에 효과가 있다</des>
+	</item>
+	
+	<item id="2" name="체리">
+		<price>20000</price>
+		<des>체리는 맛이 단 성분이 많고, 피로회복에 잘 듣는다</des>
+	</item>
+</items>

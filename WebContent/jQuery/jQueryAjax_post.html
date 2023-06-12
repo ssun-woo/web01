@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js"></script>
+
+<script>
+	
+	$(function(){
+		$("#submit").click(function(){
+			$username = $(".name").val();		// class="name" 입력필드에 입력된 값을 가져와서 좌측 jQuery변수에 저장
+			$sendData = "name2="+$username;		// name2 파라미터 이름에 값을 담아서 전달
+			$.post(
+				"result.jsp",		// 서버 파일 경로
+				$sendData,			// 보낼 자료
+				function(data){		// 비동기식으로 받아온 자료는 data매개변수에 저장함
+					$("#result").html(data);	// id="result"영역에 그 태그와 text값을 넣는다					
+				}
+			);
+		});
+	});
+
+</script>
+
+</head>
+<body>
+
+	<h1>비동기식 $.post() jQuery ajax함수</h1>
+	
+	<form>
+		<label>이름 입력 : </label>
+		<input type="text" class="name" size="14"><br>
+		<input type="button" id="submit" value="전송">
+	</form>
+	<hr>
+
+	<div id="result"></div>		<!-- ajax로 가져온 자료가 출력되는 곳 -->
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
