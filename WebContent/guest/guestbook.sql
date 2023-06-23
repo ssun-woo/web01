@@ -22,6 +22,7 @@ nocache;        -- 임시 메모리를 사용하지 않겠다는 의미
 -- 생성된 시퀀스 번호값 확인
 select gno_seq.nextval as "gno_seq시퀀스 번호값" from dual;
 
+select * from guestbook;
 
 
 
