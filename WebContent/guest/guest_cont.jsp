@@ -4,7 +4,6 @@
 <%
 
 	int no = Integer.parseInt(request.getParameter("no"));
-	// *.jsp?no = 번호 get방식으로 전달된 번호값을 받아서 정수 숫자로 변경해서 저장
 			
 	String driver = "oracle.jdbc.OracleDriver";	
 	String url = "jdbc:oracle:thin:@localhost:1521:xe"; 

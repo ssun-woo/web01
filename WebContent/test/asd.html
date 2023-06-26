@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>검색 예시</title>
+</head>
+<body>
+  <input id="search-input" type="text" placeholder="검색어를 입력하세요">
+  <div id="search-results"></div>
+
+  <script>
+    const data = [
+      { name: '사과', category: '과일' },
+      { name: '바나나', category: '과일' },
+      { name: '당근', category: '채소' },
+      { name: '감자', category: '채소' },
+      { name: '딸기', category: '과일' }
+    ];
+
+    function search(query) {
+      const results = data.filter(item => {
+        return item.name.toLowerCase().includes(query.toLowerCase());
+      });
+
+      return results;
+    }
+
+    function displayResults(results) {
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+
+      if (results.length === 0) {
+        resultsContainer.innerText = '일치하는 결과가 없습니다.';
+        return;
+      }
+
+      results.forEach(result => {
+        const resultElement = document.createElement('div');
+        resultElement.innerText = `${result.name} (${result.category})`;
+        resultsContainer.appendChild(resultElement);
+      });
+    }
+
+    function handleSearchInput(event) {
+      const searchQuery = event.target.value;
+
+      const searchResults = search(searchQuery);
+      displayResults(searchResults);
+    }
+
+    function initialize() {
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('input', handleSearchInput);
+    }
+
+    window.addEventListener('load', initialize);
+  </script>
+</body>
+</html>

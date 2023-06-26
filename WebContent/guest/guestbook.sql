@@ -24,9 +24,23 @@ select gno_seq.nextval as "gno_seq시퀀스 번호값" from dual;
 
 select * from guestbook;
 
+create table boardT7(
+  bno number(38) primary key,
+  bname varchar2(30) not null,
+  btitle varchar2(200) not null,
+  bcont varchar2(4000) not null,
+  bhit int  default 0,
+  bdate date default sysdate
+);
 
+create sequence bno_seq
+start with 1
+INCREMENT by 1
+nocache;
 
+select * from boardt7 ORDER by bno desc;
 
+select count(*) from boardt7;
 
 
 
