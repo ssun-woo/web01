@@ -9,7 +9,6 @@
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "java";
 	String password = "1234";
-	
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
